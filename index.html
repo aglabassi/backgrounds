@@ -3,16 +3,24 @@
 <html>
 <title>Home</title>
 <head>
-	<meta http-equiv="refresh" content="100">
-	<style>
-		html {
-			background: url(https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&h=1080&fit=crop) no-repeat center center fixed; 
-			-webkit-background-size: cover;
-			-moz-background-size: cover;
-			-o-background-size: cover;
-			background-size: cover;
-		}
-	</style>
+    <meta http-equiv="refresh" content="30">
+    <style>
+        html {
+            background: url(https://picsum.photos/1920/1080?random=1) no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+    </style>
+    <script>
+        // Generate random number for image URL to ensure different image each refresh
+        document.addEventListener('DOMContentLoaded', function() {
+            const randomNum = Math.floor(Math.random() * 10000);
+            const imageUrl = `https://picsum.photos/1920/1080?random=${randomNum}`;
+            document.documentElement.style.backgroundImage = `url(${imageUrl})`;
+        });
+    </script>
 </head>
 <body></body>
 </html>
